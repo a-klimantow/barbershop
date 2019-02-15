@@ -1,14 +1,77 @@
-doctype html
-html
-    head
-        meta(charset="utf-8")
-        title my page
-        meta(content="" name="author")
-        meta(content="" name="description")
-        meta(content="" name="keywords")
-        meta(content="widht=device-width, initial-scale=1" name="viewport")
-        meta(content="ie=edge" http-equiv="x-ua-compatible")
-        link(rel="stylesheet", href="/assets/css/app.css")
-    
-    body
-        h1 hello
+extends blocks/base.pug
+
+block logo
+  img(src="" alt="Логотип Барбершоп")
+
+block content
+  // main index page
+  main.container
+    section.advantage
+      h2.visible-hidden
+      ul.advantage__list
+        li.advantage__item
+          h3.advantage__item_title
+          p.advantage__item_text
+    // news 
+    .wrap-section
+      section.news
+        h2.section__title Новости
+        .news__block
+          p.news__block_text
+            | НАМ НАКОНЕЦ ЗАВЕЗЛИ ЯГЕРМАЙСТЕР! ТЕПЕРЬ ВЫ МОЖЕТЕ ПРОПУСТИТЬ СТАКАНЧИК ВО ВРЕМЯ СТРИЖКИ
+          data.news__block_date
+            | 11 января
+        .news__block
+          p.news__block_text
+            | В НАШЕЙ КОМАНДЕ ПОПОЛНЕНИЕ, БОРИС «БРИТВА» СТРИГУНЕЦ, ОБЛАДAТЕЛЬ МНОЖЕСТВА ТИТУЛОВ И НАГРАД ПОПОЛНИЛ НАШИ СТРОЙНЫЕ РЯДЫ
+          data.news__block_text
+            | 18 января
+          a(class="btn" href="#") Все новости
+      // photogallery
+      section.photogallery
+        h2.section__title Фотогалерея
+        ul.photogallery__list
+          li.photogallery__item
+            img(src="", alt="")
+          li.photogallery__item
+            img(src="", alt="")
+          li.photogallery__item
+            img(src="", alt="")
+        span.photogallery__button.prev.btn назад
+        span.photogallery__button.next.btn вперед
+
+    .wrap-section
+      // contacts
+      section.contacts
+        h2.section__title Контактная информация
+        .adress
+          p Барбершоп "Бородинский"
+          p Адрес: г.Санкт-петербург, ул.Б.Конюшенная, д.19/8
+          p
+            | телефон: 
+            a(href="#") +7 (495) 66-02-66
+        h4.work-time время работы:
+          p пн-пт: с 10:00 до 22:00
+          p сб-вс: с 10:00 до 19:00
+        a.btn Как проехать
+        a.btn  Обратная связь
+
+      section.form
+        h2.section__title Записаться
+        p Укажите желаемую дату и время мы свяжемся с вами для подтверждения брони
+        form
+          .form__row
+            label(for="date") дата
+              input(type="text" value="08.10.2017")
+            label(for="time") время
+              input(tipe="text" value="10.00")
+          .form__row
+            label(for="name") Ваше имя
+              input(type="text" value="Ботода")
+            label(for="phone") Телефон
+              input(type="phone")
+
+
+
+
+
