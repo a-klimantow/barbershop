@@ -1,0 +1,13 @@
+.news {
+  width: 50%;
+  padding-right: 36px;
+
+  &__block_date {
+    display: inline-block;
+    margin-bottom: 31px
+  }
+
+  & .btn {
+    width: 35%;
+  }
+}

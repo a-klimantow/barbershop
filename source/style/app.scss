@@ -1,4 +1,9 @@
-body {
-    background-color: #ccc;
-    color: red;
-}
+@import '_fonts';
+@import '_base';
+@import '_header';
+@import '_advantage';
+@import '_news';
+@import '_gallery';
+@import '_contacts';
+@import '_form';
+@import '_footer';

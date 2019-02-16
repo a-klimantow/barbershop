@@ -1,0 +1,20 @@
+.contacts {
+  width: 50%;
+
+  & .adress {
+    margin-bottom: 32px;
+  }
+
+  & .work-time {
+    margin-bottom: 28px;
+  }
+  
+  & .btn {
+    width: 35%;
+    margin-right: 5%; 
+  }
+
+  & .button-group {
+    display: flex;
+  }
+}

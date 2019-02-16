@@ -7,30 +7,43 @@
     <meta content="" name="keywords">
     <meta content="widht=device-width, initial-scale=1" name="viewport">
     <meta content="ie=edge" http-equiv="x-ua-compatible">
-    <link rel="stylesheet" href="/assets/css/app.css">
+    <link rel="stylesheet" href="/css/normalise.css">
+    <link rel="stylesheet" href="/css/app.css">
     <title>Барбершоп "Бородинский"</title>
   </head>
   <body>
     <!--header-->
-    <header>
-      <nav class="navigation"><a class="logo" href="/"><img src="" alt="логотип"></a>
-        <ul class="navigation__list">
-          <li class="navigation__item"><a href="#">информация</a></li>
-          <li class="navigation__item"><a href="#">новости</a></li>
-          <li class="navigation__item"><a href="#">прайс-лист</a></li>
-          <li class="navigation__item"><a href="#"> магазин</a></li>
-          <li class="navigation__item"><a href="#">контакты</a></li>
-        </ul><a clacc="login" href="#">вход</a>
-      </nav><img src="" alt="Логотип Барбершоп">
+    <header class="header">
+      <nav class="navigation">
+        <div class="navigation__wrap"><a class="navigation__link navigation__logo" href="/"><img src="img/logo/logo.svg" alt="логотип"></a>
+          <ul class="navigation__list">
+            <li class="navigation__item"><a class="navigation__link" href="#">информация</a></li>
+            <li class="navigation__item"><a class="navigation__link" href="#">новости</a></li>
+            <li class="navigation__item"><a class="navigation__link" href="#">прайс-лист</a></li>
+            <li class="navigation__item"><a class="navigation__link" href="#"> магазин</a></li>
+            <li class="navigation__item"><a class="navigation__link" href="#">контакты</a></li>
+          </ul>
+          <div class="navigation__login"><a class="navigation__link" href="#">вход</a></div>
+        </div>
+      </nav><img class="index-logo" src="img/logo/index-logo.svg" alt="Логотип Барбершоп">
     </header>
     <!-- main index page-->
     <main class="container">
+      <h1 class="visually-hidden">Барбершоп "Бородинский"! Лучшие мужские стрижки</h1>
       <section class="advantage">
-        <h2 class="visible-hidden"></h2>
-        <ul class="advantage__list">
+        <h2 class="visually-hidden">Наши приемущества</h2>
+        <ul class="advantage__list"> 
           <li class="advantage__item">
-            <h3 class="advantage__item_title"></h3>
-            <p class="advantage__item_text"></p>
+            <h3 class="advantage__item_title">Быстро</h3>
+            <p class="advantage__item_text">МЫ ДЕЛАЕМ СВОЮ РАБОТУ БЫСТРО! ДВА ЧАСА ПРОЛЕТЯТ НЕЗАМЕТНО И ВЫ - счастливый обладатель стильной стрижки минутки</p>
+          </li>
+          <li class="advantage__item">
+            <h3 class="advantage__item_title">Круто</h3>
+            <p class="advantage__item_text">ЗАБУДЬТЕ, КАК ВЫ СТРИГЛИСЬ РАНЬШЕ.<br>МЫ СДЕЛАЕМ ИЗ ВАС ЗВЕЗДУ ФУТБОЛА ИЛИ КИНО!<br>во всяком случае внешне.</p>
+          </li>
+          <li class="advantage__item">
+            <h3 class="advantage__item_title">Дорого</h3>
+            <p class="advantage__item_text">НАШИ МАСТЕРА — ПРОФЕССИОНАЛЫ СВОЕГО ДЕЛА И НЕ МОГУТ СТОИТЬ ДЕШЕВО. К ТОМУ ЖЕ, РАЗВЕ ЦЕНА НЕ ДАЕТ ОПРЕДЕЛЕНЫЙ СТАТУС?</p>
           </li>
         </ul>
       </section>
@@ -44,17 +57,18 @@
           </div>
           <div class="news__block">
             <p class="news__block_text">В НАШЕЙ КОМАНДЕ ПОПОЛНЕНИЕ, БОРИС «БРИТВА» СТРИГУНЕЦ, ОБЛАДAТЕЛЬ МНОЖЕСТВА ТИТУЛОВ И НАГРАД ПОПОЛНИЛ НАШИ СТРОЙНЫЕ РЯДЫ</p>
-            <data class="news__block_text">18 января</data><a class="btn" href="#">Все новости</a>
+            <data class="news__block_date">18 января</data><a class="btn" href="#">Все новости</a>
           </div>
         </section>
         <!-- photogallery-->
         <section class="photogallery">
           <h2 class="section__title">Фотогалерея</h2>
           <ul class="photogallery__list">
+            <li class="photogallery__item"><img src="img/gallery/fotogallery.jpg" alt=""></li>
             <li class="photogallery__item"><img src="" alt=""></li>
             <li class="photogallery__item"><img src="" alt=""></li>
-            <li class="photogallery__item"><img src="" alt=""></li>
-          </ul><span class="photogallery__button prev btn">назад</span><span class="photogallery__button next btn">вперед</span>
+          </ul>
+          <div class="button-group"><span class="photogallery__button prev btn">назад</span><span class="photogallery__button next btn">вперед</span></div>
         </section>
       </div>
       <div class="wrap-section">
@@ -69,48 +83,62 @@
           <h4 class="work-time">время работы:
             <p>пн-пт: с 10:00 до 22:00</p>
             <p>сб-вс: с 10:00 до 19:00</p>
-          </h4><a class="btn">Как проехать</a><a class="btn"> Обратная связь</a>
+          </h4>
+          <div class="button-group"><a class="btn">Как проехать</a><a class="btn"> Обратная связь</a></div>
         </section>
         <section class="form">
           <h2 class="section__title">Записаться</h2>
-          <p>Укажите желаемую дату и время мы свяжемся с вами для подтверждения брони</p>
+          <p class="form__text">Укажите желаемую дату и время мы свяжемся с вами для подтверждения брони</p>
           <form>
             <div class="form__row">
-              <label for="date">дата
+              <div class="form__elem">
+                <label for="date">дата</label>
                 <input type="text" value="08.10.2017">
-              </label>
-              <label for="time">время
+              </div>
+              <div class="fomr__elem">
+                <label for="time">время</label>
                 <input tipe="text" value="10.00">
-              </label>
+              </div>
             </div>
             <div class="form__row">
-              <label for="name">Ваше имя
+              <div class="form__elem">
+                <label for="name">Ваше имя</label>
                 <input type="text" value="Ботода">
-              </label>
-              <label for="phone">Телефон
+              </div>
+              <div class="form__elem">
+                <label for="phone">Телефон</label>
                 <input type="phone">
-              </label>
+              </div>
             </div>
+            <button class="btn" type="button">отправить</button>
           </form>
         </section>
       </div>
     </main>
     <!-- footer-->
     <footer class="footer">
-      <div class="adress">
-        <p>Барбершоп "Бородинский"</p>
-        <p>Адрес: г.Санкт-петербург, ул.Б.Конюшенная, д.19/8</p>
-        <p><a href="#">Как нас найти?</a></p>
-        <p>телефон: <a href="#">+7 (495) 66-02-66</a></p>
-      </div>
-      <div class="social-icon">
-        <p>Давайте дружить</p>
-        <ul class="social-icon__list">
-          <li class="social-icon__item"><a class="social-icon__link social-icon__link_vk"><img src=" vk"></a></li>
-          <li class="social-icon__item"><a class="social-icon__link social-icon__link_fb"><img src=" fb"></a></li>
-          <li class="social-icon__item"><a class="social-icon__link social-icon__link_inst"><img src=" inst"></a></li>
-        </ul>
+      <div class="footer__wrap">
+        <div class="adress">
+          <p>Барбершоп "Бородинский"</p>
+          <p>Адрес: г.Санкт-петербург, ул.Б.Конюшенная, д.19/8</p>
+          <p><a href="#">Как нас найти?</a></p>
+          <p>телефон: <a href="#">+7 (495) 66-02-66</a></p>
+        </div>
+        <div class="social-icon">
+          <p>Давайте дружить</p>
+          <ul class="social-icon__list">
+            <li class="social-icon__item"><a class="social-icon__link social-icon__link_vk" href="#"><img src="img/icons/soc-icon-vk.png"></a></li>
+            <li class="social-icon__item"><a class="social-icon__link social-icon__link_fb" href="#"><img src="img/icons/soc-icon-fb.png"></a></li>
+            <li class="social-icon__item"><a class="social-icon__link social-icon__link_inst" href="#"><img src="img/icons/soc-icon-inst.png"></a></li>
+          </ul>
+        </div>
       </div>
     </footer>
+    <!-- modal-->
+    <div class="login">
+      <h4 class="login__title">
+        <form class="login__form"></form>
+      </h4>
+    </div>
   </body>
 </html>

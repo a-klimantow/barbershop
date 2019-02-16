@@ -1,17 +1,24 @@
 extends blocks/base.pug
 
 block logo
-  img(src="" alt="Логотип Барбершоп")
+  img.index-logo(src="img/logo/index-logo.svg" alt="Логотип Барбершоп")
 
 block content
   // main index page
   main.container
+    h1.visually-hidden Барбершоп "Бородинский"! Лучшие мужские стрижки
     section.advantage
-      h2.visible-hidden
-      ul.advantage__list
+      h2.visually-hidden Наши приемущества
+      ul.advantage__list 
         li.advantage__item
-          h3.advantage__item_title
-          p.advantage__item_text
+          h3.advantage__item_title Быстро
+          p.advantage__item_text МЫ ДЕЛАЕМ СВОЮ РАБОТУ БЫСТРО! ДВА ЧАСА ПРОЛЕТЯТ НЕЗАМЕТНО И ВЫ - счастливый обладатель стильной стрижки минутки
+        li.advantage__item
+          h3.advantage__item_title Круто
+          p.advantage__item_text ЗАБУДЬТЕ, КАК ВЫ СТРИГЛИСЬ РАНЬШЕ.<br>МЫ СДЕЛАЕМ ИЗ ВАС ЗВЕЗДУ ФУТБОЛА ИЛИ КИНО!<br>во всяком случае внешне.
+        li.advantage__item
+          h3.advantage__item_title Дорого
+          p.advantage__item_text НАШИ МАСТЕРА — ПРОФЕССИОНАЛЫ СВОЕГО ДЕЛА И НЕ МОГУТ СТОИТЬ ДЕШЕВО. К ТОМУ ЖЕ, РАЗВЕ ЦЕНА НЕ ДАЕТ ОПРЕДЕЛЕНЫЙ СТАТУС?
     // news 
     .wrap-section
       section.news
@@ -24,7 +31,7 @@ block content
         .news__block
           p.news__block_text
             | В НАШЕЙ КОМАНДЕ ПОПОЛНЕНИЕ, БОРИС «БРИТВА» СТРИГУНЕЦ, ОБЛАДAТЕЛЬ МНОЖЕСТВА ТИТУЛОВ И НАГРАД ПОПОЛНИЛ НАШИ СТРОЙНЫЕ РЯДЫ
-          data.news__block_text
+          data.news__block_date
             | 18 января
           a(class="btn" href="#") Все новости
       // photogallery
@@ -32,13 +39,14 @@ block content
         h2.section__title Фотогалерея
         ul.photogallery__list
           li.photogallery__item
-            img(src="", alt="")
+            img(src="img/gallery/fotogallery.jpg", alt="")
           li.photogallery__item
             img(src="", alt="")
           li.photogallery__item
             img(src="", alt="")
-        span.photogallery__button.prev.btn назад
-        span.photogallery__button.next.btn вперед
+        .button-group
+          span.photogallery__button.prev.btn назад
+          span.photogallery__button.next.btn вперед
 
     .wrap-section
       // contacts
@@ -53,23 +61,29 @@ block content
         h4.work-time время работы:
           p пн-пт: с 10:00 до 22:00
           p сб-вс: с 10:00 до 19:00
-        a.btn Как проехать
-        a.btn  Обратная связь
+        .button-group
+          a.btn Как проехать
+          a.btn  Обратная связь
 
       section.form
         h2.section__title Записаться
-        p Укажите желаемую дату и время мы свяжемся с вами для подтверждения брони
+        p.form__text Укажите желаемую дату и время мы свяжемся с вами для подтверждения брони
         form
           .form__row
-            label(for="date") дата
+            .form__elem
+              label(for="date") дата
               input(type="text" value="08.10.2017")
-            label(for="time") время
+            .fomr__elem
+              label(for="time") время
               input(tipe="text" value="10.00")
           .form__row
-            label(for="name") Ваше имя
+            .form__elem
+              label(for="name") Ваше имя
               input(type="text" value="Ботода")
-            label(for="phone") Телефон
+            .form__elem
+              label(for="phone") Телефон
               input(type="phone")
+          button.btn(type="button") отправить
 
 
 

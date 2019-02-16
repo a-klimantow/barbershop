@@ -2,7 +2,7 @@
 
 module.exports = function() {
     $.gulp.task('sass', function() {
-        return $.gulp.src('./source/style/app.scss')
+        return $.gulp.src('./source/style/*.scss')
         .pipe($.gp.sourcemaps.init())
         .pipe($.gp.sass())
         .on('error', $.gp.notify.onError({
@@ -18,7 +18,7 @@ module.exports = function() {
             ]
         }))
         .pipe($.gp.sourcemaps.write())
-        .pipe($.gulp.dest('./build/assets/css'));
+        .pipe($.gulp.dest('./build/css'));
     });
 }
 
