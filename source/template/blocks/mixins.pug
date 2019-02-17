@@ -1,0 +1,6 @@
+//- генерирует список (имя класса, переменная)
+mixin list(className, variables)
+    ul(class= className)
+        each i,index in variables
+            li(class= className + '__item')
+                a(class= className + '__link' + (isNaN(index) ? " " + index : "") href="#") !{i}

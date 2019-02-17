@@ -1,67 +1,44 @@
-doctype html
-html
-  head
-    meta(charset="utf-8")
-    meta(content="" name="author")
-    meta(content="" name="description")
-    meta(content="" name="keywords")
-    meta(content="widht=device-width, initial-scale=1" name="viewport")
-    meta(content="ie=edge" http-equiv="x-ua-compatible")
-    link(rel="stylesheet", href="/css/normalise.css")
-    link(rel="stylesheet", href="/css/app.css")
-    title Барбершоп "Бородинский"
-  
-  body
-    //header
-    header.header
-      nav.navigation
-        .navigation__wrap
-          a(class="navigation__link navigation__logo" href="/")
-            img(src="img/logo/logo.svg" alt="логотип")
-          ul.navigation__list
-            li.navigation__item
-              a.navigation__link(href="#") информация
-            li.navigation__item
-              a.navigation__link(href="#") новости
-            li.navigation__item
-              a.navigation__link(href="#") прайс-лист
-            li.navigation__item
-              a.navigation__link(href="#")  магазин
-            li.navigation__item
-              a.navigation__link(href="#") контакты
-          .navigation__login
-            a.navigation__link(href="#") вход
-      block logo
-    
-    block content
-    
-    // footer
-    footer.footer
-      .footer__wrap
-        .adress
-          p Барбершоп "Бородинский"
-          p Адрес: г.Санкт-петербург, ул.Б.Конюшенная, д.19/8
-          p
-            a(href="#") Как нас найти?
-          p
-            | телефон: 
-            a(href="#") +7 (495) 66-02-66
-        -
-          var social = ['vk', 'fb', 'inst'];
+include contents.pug
+include svg.pug
+include mixins.pug
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        link(rel="stylesheet" href="css/normalise.css")
+        link(rel="stylesheet" href="css/style.css")
+        title
+            block title
+    body
+        // header
+        header(class="header")
+            // navigation
+            nav(class="container nav")
+                a(class="logo" href="/")
+                    img(src="img/logo/logo.svg" alt="Логотип Барбершоп Бородинский")
+                +list("nav-list", nav)
 
-        .social-icon
-          p Давайте дружить
-          ul.social-icon__list
-            each i in social
-              li.social-icon__item
-                a(class="social-icon__link social-icon__link_" + i href="#")
-                  img(src="img/icons/soc-icon-" + i + ".png")
-    
-    // modal
-    div.login
-      h4.login__title
-        form.login__form
-          
-    
+                a(class="login" href="#") !{login}вход
+        // main-content
+        main(class="container")
+            block content
+        
+        // footer
+        footer(class="footer")
+            div(class="container")
+                div(class="adress")
+                    p Барбершоп "Бородинский"
+                    p Адрес:г.Санкт-Петербург,ул.Б.Конюшенная,д.19/8
+                    p
+                        a(class="footer__link" href="#") Как нас найти?
+                    p Телефон: 
+                        a(href="#") +7 (495) 66-02-66
+
+                div(class="social") Давайте дружить!
+                    +list("soc-icon", social_icons)
+
+                div(class="copirait") 
+                    p Сделанно: 
+                    a(class="btn" href="https://webklim.ru") webklim.ru
 
 

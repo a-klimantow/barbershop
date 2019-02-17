@@ -1,91 +1,75 @@
 extends blocks/base.pug
-
-block logo
-  img.index-logo(src="img/logo/index-logo.svg" alt="Логотип Барбершоп")
+block title
+    | Барбершоп "Бородинский"
 
 block content
-  // main index page
-  main.container
-    h1.visually-hidden Барбершоп "Бородинский"! Лучшие мужские стрижки
-    section.advantage
-      h2.visually-hidden Наши приемущества
-      ul.advantage__list 
-        li.advantage__item
-          h3.advantage__item_title Быстро
-          p.advantage__item_text МЫ ДЕЛАЕМ СВОЮ РАБОТУ БЫСТРО! ДВА ЧАСА ПРОЛЕТЯТ НЕЗАМЕТНО И ВЫ - счастливый обладатель стильной стрижки минутки
-        li.advantage__item
-          h3.advantage__item_title Круто
-          p.advantage__item_text ЗАБУДЬТЕ, КАК ВЫ СТРИГЛИСЬ РАНЬШЕ.<br>МЫ СДЕЛАЕМ ИЗ ВАС ЗВЕЗДУ ФУТБОЛА ИЛИ КИНО!<br>во всяком случае внешне.
-        li.advantage__item
-          h3.advantage__item_title Дорого
-          p.advantage__item_text НАШИ МАСТЕРА — ПРОФЕССИОНАЛЫ СВОЕГО ДЕЛА И НЕ МОГУТ СТОИТЬ ДЕШЕВО. К ТОМУ ЖЕ, РАЗВЕ ЦЕНА НЕ ДАЕТ ОПРЕДЕЛЕНЫЙ СТАТУС?
-    // news 
-    .wrap-section
-      section.news
-        h2.section__title Новости
-        .news__block
-          p.news__block_text
-            | НАМ НАКОНЕЦ ЗАВЕЗЛИ ЯГЕРМАЙСТЕР! ТЕПЕРЬ ВЫ МОЖЕТЕ ПРОПУСТИТЬ СТАКАНЧИК ВО ВРЕМЯ СТРИЖКИ
-          data.news__block_date
-            | 11 января
-        .news__block
-          p.news__block_text
-            | В НАШЕЙ КОМАНДЕ ПОПОЛНЕНИЕ, БОРИС «БРИТВА» СТРИГУНЕЦ, ОБЛАДAТЕЛЬ МНОЖЕСТВА ТИТУЛОВ И НАГРАД ПОПОЛНИЛ НАШИ СТРОЙНЫЕ РЯДЫ
-          data.news__block_date
-            | 18 января
-          a(class="btn" href="#") Все новости
-      // photogallery
-      section.photogallery
-        h2.section__title Фотогалерея
-        ul.photogallery__list
-          li.photogallery__item
-            img(src="img/gallery/fotogallery.jpg", alt="")
-          li.photogallery__item
-            img(src="", alt="")
-          li.photogallery__item
-            img(src="", alt="")
-        .button-group
-          span.photogallery__button.prev.btn назад
-          span.photogallery__button.next.btn вперед
+    // main-logo
+    div(class="main-logo") !{main_logo}
+    
+    // advantage
+    ul(class="advantage")
+        li(class="advantage__item")
+            h3(class="advantage__title") Быстро
+            p МЫ ДЕЛАЕМ СВОЮ РАБОТУ БЫСТРО! ДВА ЧАСА ПРОЛЕТЯТ НЕЗАМЕТНО И ВЫ — СЧАСТЛИВЫЙ ОБЛАДАТЕЛЬ СТИЛЬНОЙ СТРИЖКИ-МИНУТКИ!
+        li(class="advantage__item")
+            h3(class="advantage__title") Круто
+            p ЗАБУДЬТЕ, КАК ВЫ СТРИГЛИСЬ РАНЬШЕ. МЫ СДЕЛАЕМ ИЗ ВАС ЗВЕЗДУ ФУТБОЛА ИЛИ КИНО! ВО ВСЯКОМ СЛУЧАЕ ВНЕШНЕ.
+        li(class="advantage__item")
+            h3(class="advantage__title") Дорого
+            p НАШИ МАСТЕРА — ПРОФЕССИОНАЛЫ СВОЕГО ДЕЛА И НЕ МОГУТ СТОИТЬ ДЕШЕВО. К ТОМУ ЖЕ, РАЗВЕ ЦЕНА НЕ ДАЕТ ОПРЕДЕЛЕНЫЙ СТАТУС?
 
-    .wrap-section
-      // contacts
-      section.contacts
-        h2.section__title Контактная информация
-        .adress
-          p Барбершоп "Бородинский"
-          p Адрес: г.Санкт-петербург, ул.Б.Конюшенная, д.19/8
-          p
-            | телефон: 
-            a(href="#") +7 (495) 66-02-66
-        h4.work-time время работы:
-          p пн-пт: с 10:00 до 22:00
-          p сб-вс: с 10:00 до 19:00
-        .button-group
-          a.btn Как проехать
-          a.btn  Обратная связь
-
-      section.form
-        h2.section__title Записаться
-        p.form__text Укажите желаемую дату и время мы свяжемся с вами для подтверждения брони
-        form
-          .form__row
-            .form__elem
-              label(for="date") дата
-              input(type="text" value="08.10.2017")
-            .fomr__elem
-              label(for="time") время
-              input(tipe="text" value="10.00")
-          .form__row
-            .form__elem
-              label(for="name") Ваше имя
-              input(type="text" value="Ботода")
-            .form__elem
-              label(for="phone") Телефон
-              input(type="phone")
-          button.btn(type="button") отправить
-
-
-
-
-
+    div(class="wrap-section")
+        // news
+        section(class="news section")
+            h2(class="subtitle") Новости
+            div(class="news__item")
+                p НАМ НАКОНЕЦ ЗАВЕЗЛИ ЯГЕРМАЙСТЕР! ТЕПЕРЬ ВЫ МОЖЕТЕ ПРОПУСТИТЬ СТАКАНЧИК ВО ВРЕМЯ СТРИЖКИ
+                time(class="time" datetime="2018-01-11") 11 января
+            div(class="news__item")
+                p В НАШЕЙ КОМАНДЕ ПОПОЛНЕНИЕ, БОРИС «БРИТВА» СТРИГУНЕЦ, ОБЛАДAТЕЛЬ МНОЖЕСТВА ТИТУЛОВ И НАГРАД ПОПОЛНИЛ НАШИ СТРОЙНЫЕ РЯДЫ
+                time(class="time" datetime="2018-01-18") 18 января
+            a(class="btn" href="#") все новости
+            
+        // gallery
+        section(class="gallery section")
+            h2(class="subtitle") Фотогалерея
+            div(class="gallry__wrap")
+                img(src="img/gallery/foto_01.jpg", alt="фото салона")
+            div(class="btn-group")
+                span(class="btn prev") назад
+                span(class="btn next") вперед
+        
+    div(class="wrap-section")
+        // contacts inform
+        section(class="contacts section")
+            h2(class="subtitle") Контактная информация
+            div(class="adress")
+                p Барбершоп "Бородинский"
+                p Адрес:г.Санкт-Петербург,ул.Б.Конюшенная,д.19/8
+                p Телефон: 
+                    a(href="#") +7 (495) 66-02-66
+            div(class="time-work")
+                p время работы:
+                p пн-пт: с 10:00 до 22:00
+                p сб-вс: с 10:00 до 19:00
+            div(class="btn-group")
+                a(class="btn" href="#") как проехать
+                a(class="btn" href="#") обратная связь
+        
+        // form
+        div(class="section form")
+            h2(class="subtitle") Записаться
+            form(action="" method="post")
+                fieldset(class="form__wrap")
+                    legend(class="form__title") Укажите желаемую дату и время и мы свяжемся с вами для подтверждения брони
+                    div(class="form-row")
+                        label дата
+                            input(type="text" value="08.10.2017")
+                        label время
+                            input(type="text" value="10:00")
+                    div(class="form-row")
+                        label ваше имя
+                            input(type="text" placeholder="Борода")
+                        label телефон
+                            input(type="text" placeholder="Ваш номер")
+                    input(type="submit" value="Отправить")

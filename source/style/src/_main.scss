@@ -1,0 +1,204 @@
+body {
+    font-family: 'PT Sans', sans-serif;
+    line-height: 1.7em;
+    text-transform: uppercase;
+    color: #fff;
+    background-image: url('../img/bg/main-bg.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+    padding: 0;
+}
+
+ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+ul {
+    display: flex;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    line-height: 1;
+    outline: none;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+// общие стили для всех страниц
+.btn {
+    background-color: #000;
+    display: inline-block;
+    padding: 1.04em 2em;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.btn-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.subtitle {
+    font-size: calc(27px + .25vw);
+    margin-bottom: 1em;
+}
+
+.wrap-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-image: url('../img/bg/bg-section.png');
+    color: #000;
+    position: relative;
+    margin-bottom: 35px;
+    & .btn {
+        color: #fff;
+    }
+
+    &::before {
+        content: url('../img/icons/line.svg');
+        width: 2px;
+        height: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -30%);
+    }
+}
+
+.section {
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+// header________________
+.header {
+    background-color: #000;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+}
+
+.nav-list {
+    margin-right: auto;
+
+    &__link {
+        padding: 1.5em 1em;
+        display: inline-block;
+        height: auto;
+
+        &:hover {
+            background-color: #252525;
+        }
+    }
+}
+
+.logo {
+    padding: 0 1em;
+    display: block;
+    height: auto;
+    display: none;
+
+    img {
+        margin: auto
+    }
+
+    &:hover {
+        background-color: #252525;
+    }
+}
+
+.login {
+    padding: 1.5em 1em;
+    display: inline-block;
+
+    svg {
+        margin-right: 10px;
+        transform: translateY(2.5px);
+    }
+
+    &:hover {
+        background-color: #252525;
+    }
+
+    &:hover svg>path {
+        fill: #fff;
+    }
+}
+
+// footer___________________________________________
+.footer {
+    background-image: url('../img/bg/bg-footer.png');
+    padding: 60px 0 40px;
+    font-size: 14px;
+
+    .container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    &__link {
+        text-decoration: underline;
+    }
+}
+
+.social, .copirait {
+    justify-self: center;
+    text-align: center;
+}
+
+.soc-icon {
+    justify-content: space-evently;
+    margin-top: 20px;
+
+    &__link {
+        display: flex;
+        width: 43px;
+        height: 43px;
+        background-color: #000;
+        margin: 0 3px;
+        justify-content: center;
+        align-items: center;
+
+        &:hover, &:focus {
+            background-color: #fff;
+        }
+
+        &:hover svg path, &:focus svg path {
+            fill: #000;
+        }
+    }
+}
+
+.copirait>.btn {
+    margin-top: 20px;
+
+    &:hover, &:focus {
+        background-color: #fff;
+        color: #000;
+    }
+}
