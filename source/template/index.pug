@@ -62,14 +62,18 @@ block content
             form(action="" method="post")
                 fieldset(class="form__wrap")
                     legend(class="form__title") Укажите желаемую дату и время и мы свяжемся с вами для подтверждения брони
-                    div(class="form-row")
-                        label дата
+                    div(class="form__row")
+                        div(class="form__col")
+                            label дата
                             input(type="text" value="08.10.2017")
-                        label время
+                        div(class="form__col")
+                            label время
                             input(type="text" value="10:00")
-                    div(class="form-row")
-                        label ваше имя
+                    div(class="form__row")
+                        div(class="form__col")
+                            label ваше имя
                             input(type="text" placeholder="Борода")
-                        label телефон
+                        div(class="form__col")    
+                            label телефон
                             input(type="text" placeholder="Ваш номер")
                     input(type="submit" value="Отправить")

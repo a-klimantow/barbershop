@@ -70,6 +70,10 @@ img {
     color: #000;
     position: relative;
     margin-bottom: 35px;
+
+    &:last-child {
+        margin-bottom: 60px;
+    }
     & .btn {
         color: #fff;
     }
@@ -107,7 +111,7 @@ img {
     margin-right: auto;
 
     &__link {
-        padding: 1.5em 1em;
+        padding: 1.6em 1em;
         display: inline-block;
         height: auto;
 
@@ -119,7 +123,7 @@ img {
 
 .logo {
     padding: 0 1em;
-    display: block;
+    display: flex;
     height: auto;
     display: none;
 
@@ -164,7 +168,7 @@ img {
     &__link {
         text-decoration: underline;
     }
-}
+} 
 
 .social, .copirait {
     justify-self: center;
