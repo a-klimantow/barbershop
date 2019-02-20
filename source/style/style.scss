@@ -1,3 +1,122 @@
 @import 'src/fonts';
 @import 'src/_main';
-@import 'src/_index-page';
+
+.main-logo {
+    max-width: 370px;
+    margin: 60px auto 79px;
+}
+
+// block abvantage
+.advantage {
+    text-align: center;
+    justify-content: center;
+    margin-bottom: 85px;
+    
+    &__item {
+        padding: 0 20px;
+        width: 33%;
+    }
+
+    &__title {
+        font-size: calc(27px + .25vw);
+        margin-bottom: 76px;
+        position: relative;
+
+        &::before {
+            position: absolute;
+            content: '';
+            width: 21.21px;
+            height: 21.21px;
+            display: block;
+            background-color: #fff;
+            left: 50%;
+            transform: translateX(-50%) rotate(45deg);
+            bottom: -200%;
+        }
+    }
+}
+
+// block news
+.news {
+    align-items: start;
+
+    &__item {
+        margin-bottom: 30px;
+    }
+
+    .time {
+        text-transform: none;
+    }
+}
+
+// block gallery
+.gallery {
+    .subtitle {
+        margin: 0;
+    }
+
+    .btn {
+        padding-left: 3em;
+        padding-right: 3em;
+    }
+
+    &__img-wrap {
+        height: 200px;
+        overflow: hidden;
+        border: 7px solid #fff;
+        box-sizing: content-box;
+    }
+}
+
+// block contacts
+.contacts {
+    .adress, .time-work {
+        margin-bottom: 30px;
+    }
+}
+
+// block form
+.form {
+
+    &__row {
+        display: flex;
+        margin-bottom: 18px;
+        justify-content: space-between;
+    }
+    &__col {
+        width: 47%;
+    }
+
+    &__title {
+        margin-bottom: 24px;
+    }
+    
+    &__wrap {
+        border: none;
+        padding: 0;
+    }
+
+    label {
+        display: inline-block;
+        padding-left: 1em;
+        margin-bottom: 10px;
+    }
+
+    input {
+        width: 100%;
+        box-sizing: border-box;
+        background-color: #fff;
+        color: #000;
+        padding: 0.5em 1em;
+    }
+
+    input[type="submit"] {
+        border: none;
+        background-color: #000;
+        color: #fff;
+        text-transform: uppercase;
+        line-height: 1;
+        padding: 1.04em 0;
+
+    }
+}

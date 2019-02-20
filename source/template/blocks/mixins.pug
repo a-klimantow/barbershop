@@ -1,6 +1,32 @@
-//- генерирует список (имя класса, переменная)
-mixin list(className, variables)
+//- генерирует список (имя класса, переменная, тип списка)
+mixin list(className, variables, typeList)
     ul(class= className)
-        each i,index in variables
-            li(class= className + '__item')
-                a(class= className + '__link' + (isNaN(index) ? " " + index : "") href="#") !{i}
+        //- для навигации
+        if (typeList == "nav")
+            each href, name in variables
+                li(class= className + "__item")
+                    a(class= className + "__link" href= href) #{name}
+        //- для картинок svg ссылок
+        if (typeList == "svg")
+            each item, name in variables
+                li(class= className + "__item " + name )
+                    a(class= className + "__link" href= item.link target="_blank") !{item['svg']}
+        //- для простого списка
+        if (typeList == "simple")
+            each item in variables
+                li(class= className + "__item")= item
+        //- для карточек товаров
+        if (typeList == "cards")
+            each item in variables
+                li(class= className + "__item")
+                    div(class=className + "__img-wrap")
+                        img(src="img/cards/" + item['src'] + ".jpg", alt= item['title'])
+                    a(href="#")
+                        h3(class= className + "__title")= item['title']
+                            span= item['name']
+                    div(class= className + "__group-btn")
+                        span(class= className + "__price")= item['price']
+                        span(class= className +"__btn btn") купить   
+
+mixin pageTitle(title)
+    h1(class="pages__title")= title

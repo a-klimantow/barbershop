@@ -1,12 +1,14 @@
 include contents.pug
 include svg.pug
 include mixins.pug
+
 <!DOCTYPE html>
-html(lang="en")
+html(lang="ru")
     head
         meta(charset="UTF-8")
         link(rel="stylesheet" href="css/normalise.css")
-        link(rel="stylesheet" href="css/style.css")
+        block linkStyle
+            link(rel="stylesheet" href="css/style.css")
         title
             block title
     body
@@ -16,11 +18,11 @@ html(lang="en")
             nav(class="container nav")
                 a(class="logo" href="/")
                     img(src="img/logo/logo.svg" alt="Логотип Барбершоп Бородинский")
-                +list("nav-list", nav)
+                +list("nav-list", nav, "nav")
 
                 a(class="login" href="#") !{login}вход
         // main-content
-        main(class="container")
+        main(class="container main")
             block content
         
         // footer
@@ -35,7 +37,7 @@ html(lang="en")
                         a(href="#") +7 (495) 66-02-66
 
                 div(class="social") Давайте дружить!
-                    +list("soc-icon", social_icons)
+                    +list("soc-icon", social_icons, "svg")
 
                 div(class="copirait") 
                     p Сделанно: 

@@ -1,0 +1,40 @@
+extends blocks/base.pug
+
+block linkStyle
+    link(rel="stylesheet", href="css/pages.css")
+
+block title
+    | Прайс-лист
+
+block content
+
+    +pageTitle("Прайс-лист")
+    span.bread-crumbs хлебные крошки
+    
+    div(class="wrap-banner")
+        div(class="banner") Истинно мужская классика
+
+    div(class="wrap-section")
+        section(class="cosmetic")
+            h2(class="pages__subtitle") Мы используем только<br>лучшие средства:
+            +list("cosmetic-list", cosmetic, "simple")
+
+        section(class="price-master")
+            h2(class="pages__subtitle") Цены на услуги<br>наших мастеров:
+            table(class="price-master__table")
+                tr
+                    td стрижка
+                    td 1500 р.
+                tr
+                    td Стрижка бороды
+                    td 500 р.
+                tr
+                    td накрутка усов
+                    td 350 р.
+
+        section(class="aboutUs")
+            div(class="wrap-section")
+                h2(class="pages__subtitle") Несколько слов о нас:
+                p Наша парикмахерская занимается исключительно мужскими стрижками. Стрижка каждого клиента для нас - это уникальная и продуманная до мелочей работа. мы не работаем на количетво, мы делаем качество.
+
+                p Наша мастерская расположена в центре города, поэтому сделать стильную стрижку можно в любое время, даже в обеденный перерыв, здесь вы можете погрузиться в удобную для вас атмосферу, чувствовать себя в комфортно и свободно!

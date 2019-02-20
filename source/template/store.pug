@@ -1,0 +1,23 @@
+extends blocks/base
+
+block linkStyle
+    link(rel="stylesheet", href="css/pages.css")
+
+block title
+    | Магазин
+
+block content
+
+    +pageTitle("Средства для ухода")
+    span.bread-crumbs хлебные крошки
+    
+    div(class="wrap-section store")
+        aside
+            h3(class="pades_subtitle") Производители
+            //- +list("manuracturer", manufacturer, "simple")
+                
+            
+                     
+        div(class="cards")
+            +list("cards-list", cards, "cards")
+
